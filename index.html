@@ -11,7 +11,6 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            height: 100vh;
             overflow: hidden;
         }
 
@@ -57,17 +56,17 @@
     <script>
         const gregP = document.getElementById('gregP');
         let isPlaying = false;
-        let gifUrl = "/gregP.gif";
-        let pngUrl = "/gregP.png";
+        let movingPngUrl = "gregP.png"; // Moving PNG
+        let staticPngUrl = "greg.png"; // Static PNG
 
-        // Set initial state to paused (PNG)
-        gregP.src = pngUrl;
+        // Set initial state to static PNG
+        gregP.src = staticPngUrl;
 
         gregP.addEventListener('click', () => {
             if (isPlaying) {
-                gregP.src = pngUrl;
+                gregP.src = staticPngUrl;
             } else {
-                gregP.src = gifUrl;
+                gregP.src = movingPngUrl;
             }
             isPlaying = !isPlaying;
         });
