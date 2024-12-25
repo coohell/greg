@@ -66,8 +66,24 @@
         <a href="https://www.instagram.com/tzuiyang_/"><img id="nameG" src="/nameG.png" alt="name G"></a>
     </div>
 
-<iframe id="youtube-player" width="0" height="0" style="visibility: hidden;" src="https://www.youtube.com/embed/ekr2nIex040?autoplay=1&mute=1&controls=0&loop=1&playlist=ekr2nIex040" frameborder="0" allow="autoplay; fullscreen"></iframe> <script> const gregP = document.getElementById('gregP'); const youtubePlayer = document.getElementById('youtube-player'); let isPlaying = false; let gifUrl = "/gregP.png"; let pngUrl = "/greg.png";
-    // Set initial state to paused (PNG) gregP.src = pngUrl; gregP.addEventListener('click', () => { if (isPlaying) { // Stop the video and switch to PNG youtubePlayer.contentWindow.postMessage('{"event":"command","func":"stopVideo","args":""}', '*'); gregP.src = pngUrl; } else { // Play the video and switch to GIF youtubePlayer.contentWindow.postMessage('{"event":"command","func":"playVideo","args":""}', '*'); gregP.src = gifUrl; } isPlaying = !isPlaying; }); </script>
 
+    <script>
+        const gregP = document.getElementById('gregP');
+        let isPlaying = false;
+        let gifUrl = "/gregP.png";
+        let pngUrl = "/greg.png";
+
+        // Set initial state to paused (PNG)
+        gregP.src = pngUrl;
+
+        gregP.addEventListener('click', () => {
+            if (isPlaying) {
+                gregP.src = pngUrl;
+            } else {
+                gregP.src = gifUrl;
+            }
+            isPlaying = !isPlaying;
+        });
+    </script>
 </body>
 </html>
