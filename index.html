@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
         <link rel="icon" href="/greg.png" type="image/x-icon"> 
-    <title>It's Me, Greg!</title>
+    <title>It's Me, Greg.</title>
     <style>
         body {
             background-color: #ffc650;
@@ -61,10 +61,6 @@
 </head>
 <body>
     <div id="container">
-        <video id="gregVideo" width="320" height="240" style="display: none;">
-    <source src="/video.mp4" type="video/mp4">
-        </video>
-
         <img id="gregP" src="/greg.png" alt="Greg P">
         <img id="txtG" src="/txtG.png" alt="Text G">
         <a href="https://www.instagram.com/tzuiyang_/"><img id="nameG" src="/nameG.png" alt="name G"></a>
@@ -72,38 +68,22 @@
 
 
     <script>
-const gregP = document.getElementById('gregP');
-const gregVideo = document.getElementById('gregVideo');
-let isPlaying = false;
-let gifUrl = "/gregP.png";
-let pngUrl = "/greg.png";
+        const gregP = document.getElementById('gregP');
+        let isPlaying = false;
+        let gifUrl = "/gregP.png";
+        let pngUrl = "/greg.png";
 
-// Set initial state to paused (PNG)
-gregP.src = pngUrl;
-
-gregP.addEventListener('click', () => {
-    if (isPlaying) {
-        // Show PNG image and pause the video
+        // Set initial state to paused (PNG)
         gregP.src = pngUrl;
-        gregP.style.display = 'block';
-        gregVideo.style.display = 'none';
-        gregVideo.pause();
-    } else {
-        // Show video and play it
-        gregP.style.display = 'none';
-        gregVideo.style.display = 'block';
-        gregVideo.play();
-    }
-    isPlaying = !isPlaying;
-});
 
-gregVideo.addEventListener('ended', () => {
-    // Reset to PNG when the video ends
-    gregP.style.display = 'block';
-    gregVideo.style.display = 'none';
-    gregP.src = pngUrl;
-    isPlaying = false;
-});
+        gregP.addEventListener('click', () => {
+            if (isPlaying) {
+                gregP.src = pngUrl;
+            } else {
+                gregP.src = gifUrl;
+            }
+            isPlaying = !isPlaying;
+        });
     </script>
 </body>
 </html>
