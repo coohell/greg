@@ -56,17 +56,17 @@
     <script>
         const gregP = document.getElementById('gregP');
         let isPlaying = false;
-        let movingPngUrl = "/gregP.png"; // Moving PNG
-        let staticPngUrl = "/greg.png"; // Static PNG
+        let gifUrl = "gregP.gif";
+        let pngUrl = "greg.png";
 
-        // Set initial state to static PNG
-        gregP.src = staticPngUrl;
+        // Set initial state to paused (PNG)
+        gregP.src = pngUrl;
 
         gregP.addEventListener('click', () => {
             if (isPlaying) {
-                gregP.src = staticPngUrl;
+                gregP.src = pngUrl;
             } else {
-                gregP.src = movingPngUrl;
+                gregP.src = gifUrl;
             }
             isPlaying = !isPlaying;
         });
