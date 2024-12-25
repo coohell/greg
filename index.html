@@ -66,26 +66,20 @@
         <a href="https://www.instagram.com/tzuiyang_/"><img id="nameG" src="/nameG.png" alt="name G"></a>
     </div>
 
-        <script>
-    const gregP = document.getElementById('gregP');
+    <script>
+        const gregP = document.getElementById('gregP');
         let isPlaying = false;
-        let movingPngUrl = "gregP.png"; // Moving PNG
-        let staticPngUrl = "greg"; // Static PNG
+        let gifUrl = "gregP.gif";
+        let pngUrl = "greg.png";
 
-        // Create and configure audio
-        const audio = new Audio("https://www.youtube.com/watch?v=dQw4w9WgXcQ");
-        audio.loop = true;
-
-        // Set initial state to static PNG
-        gregP.src = staticPngUrl;
+        // Set initial state to paused (PNG)
+        gregP.src = pngUrl;
 
         gregP.addEventListener('click', () => {
             if (isPlaying) {
-                gregP.src = staticPngUrl;
-                audio.pause();
+                gregP.src = pngUrl;
             } else {
-                gregP.src = movingPngUrl;
-                audio.play();
+                gregP.src = gifUrl;
             }
             isPlaying = !isPlaying;
         });
