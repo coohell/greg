@@ -29,8 +29,6 @@
         }
 
         #gregP {
-            position:static;
-            width: 100%;
             z-index: 2;
             opacity: 1;
             animation: fadeIn 4s forwards;
@@ -55,23 +53,5 @@
         <img id="gregP" src="/gregP.png" alt="Greg P">
     </div>
     
-    <script>
-        const gregP = document.getElementById('gregP');
-        let isPlaying = false;
-        let gifUrl = "gregP.gif";
-        let pngUrl = "greg.png";
-
-        // Set initial state to paused (PNG)
-        gregP.src = pngUrl;
-
-        gregP.addEventListener('click', () => {
-            if (isPlaying) {
-                gregP.src = pngUrl;
-            } else {
-                gregP.src = gifUrl;
-            }
-            isPlaying = !isPlaying;
-        });
-    </script>
 </body>
 </html>
