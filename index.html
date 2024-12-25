@@ -50,9 +50,28 @@
 </head>
 <body>
     <div id="container">
-        <img id="gregP" src="/gregP.png" alt="Greg P">
+        <img id="gregP" src="/greg.png" alt="Greg P">
         <img id="txtG" src="/txtG.png" alt="Text G">
     </div>
-    
+
+        <script>
+        const gregP = document.getElementById('gregP');
+        let isPlaying = false;
+        let gifUrl = "gregP.png";
+        let pngUrl = "greg.png";
+
+        // Set initial state to paused (PNG)
+        gregP.src = pngUrl;
+
+        gregP.addEventListener('click', () => {
+            if (isPlaying) {
+                gregP.src = pngUrl;
+            } else {
+                gregP.src = gifUrl;
+            }
+            isPlaying = !isPlaying;
+        });
+    </script>
+
 </body>
 </html>
