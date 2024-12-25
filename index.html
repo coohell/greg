@@ -67,14 +67,13 @@
     </div>
 
         <script>
-        const gregP = document.getElementById('gregP');
+    const gregP = document.getElementById('gregP');
         let isPlaying = false;
-        let gifUrl = "gregP.png";
-        let pngUrl = "greg.png";
+        let movingPngUrl = "gregP.png"; // Moving PNG
+        let staticPngUrl = "greg"; // Static PNG
 
-        
         // Create and configure audio
-        const audio = new Audio("https://www.youtube.com/watch?v=ekr2nIex040?t=5");
+        const audio = new Audio("https://www.youtube.com/watch?v=dQw4w9WgXcQ");
         audio.loop = true;
 
         // Set initial state to static PNG
@@ -90,7 +89,6 @@
             }
             isPlaying = !isPlaying;
         });
-
     </script>
 
 </body>
