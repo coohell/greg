@@ -32,7 +32,7 @@
         #gregP {
             position: absolute;
             width: 100%;
-            z-index: 1;
+            z-index: 2;
             animation: fadeIn 0.3s forwards;
             animation-delay: 0.5s;
 
@@ -72,17 +72,25 @@
         let gifUrl = "gregP.png";
         let pngUrl = "greg.png";
 
-        // Set initial state to paused (PNG)
-        gregP.src = pngUrl;
+        
+        // Create and configure audio
+        const audio = new Audio("https://www.youtube.com/watch?v=ekr2nIex040?t=5");
+        audio.loop = true;
+
+        // Set initial state to static PNG
+        gregP.src = staticPngUrl;
 
         gregP.addEventListener('click', () => {
             if (isPlaying) {
-                gregP.src = pngUrl;
+                gregP.src = staticPngUrl;
+                audio.pause();
             } else {
-                gregP.src = gifUrl;
+                gregP.src = movingPngUrl;
+                audio.play();
             }
             isPlaying = !isPlaying;
         });
+
     </script>
 
 </body>
